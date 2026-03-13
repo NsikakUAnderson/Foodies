@@ -1,0 +1,390 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+header h1{
+  float: left;
+}
+
+header{
+  box-shadow: 0 2px 5px rgba(0,0,0,0.9);
+  background:#ccc;
+  color:#000;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 50px;
+  gap:20px;
+
+  position: fixed;   /* makes header stick */
+  top: 0;            /* keeps it at the top */
+  left: 0;
+  width: 100%;       /* full width on all devices */
+  z-index: 1000;     /* keeps it above other content */
+}
+
+nav {
+  margin-left:20px;
+  font-weight:bold;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav a:hover{
+  text-decoration:underline;
+  color: goldenrod;
+}
+
+/* Prevent page content from hiding behind the header */
+body{
+  margin:0;
+  padding-top:80px;
+}
+
+
+
+.hero{
+background-image: url(./img/foodbg.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+  /*background-color: rgba(0,0,0,0.5);
+  background-blend-mode: multiply;*/
+height:300px;
+/*background:url("https://source.unsplash.com/1600x900/?food") center/cover;*/
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:20px;
+  font-weight: bold;
+}
+
+
+.about{
+padding:50px;
+text-align:center;
+  background-image: url(./img/knive.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+  background-color: rgba(0,0,0,0.5);
+  background-blend-mode: multiply;
+}
+
+.about h2{
+margin-bottom:20px;
+  border-bottom:2px solid red;
+  border-radius: 2px;
+  padding:5px;
+  color: #fff;
+  width: 50%;
+  margin: auto auto;
+}
+
+.about p{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: popplins;
+  color:#ccc;
+}
+
+.gallery{
+  background-image: url(./img/pas.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+padding:50px;
+text-align:center;
+}
+.gallery h2{
+  color:#fff;
+}
+.food-container{
+display:grid;
+grid-template-columns:1.5fr 1.5fr;
+gap:20px;
+margin-top:30px;
+}
+
+.food{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+.food img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.food h3{
+padding:10px;
+}
+
+.food-action{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 10px 15px;
+}
+
+.amount{
+font-weight:bold;
+font-size:18px;
+color:green;
+}
+
+.buy-btn{
+background:goldenrod;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+background:#000;
+}
+
+
+.contact{
+  background-image: url(./img/table.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+background:white;
+padding:50px;
+text-align:center;
+}
+
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input, textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#ff5722;
+color:white;
+border:none;
+padding:12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e64a19;
+}
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+
+
+@media screen and(max-width:1025px){
+  
+  *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+header h1{
+  float: left;
+}
+
+.hero{
+background-image: url(./img/rice2.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+}
+
+
+header{
+background:#ff5722;
+color:white;
+display:flex;
+justify-content:space-between;
+padding:15px 50px;
+  gap:20px;
+}
+
+nav {
+margin-left:20px;
+font-weight:bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+nav a:hover{
+text-decoration:underline;
+}
+
+
+.hero{
+height:300px;
+/*background:url("https://source.unsplash.com/1600x900/?food") center/cover;*/
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:20px;
+  font-weight: bold;
+}
+
+
+.about{
+padding:50px;
+text-align:center;
+background:white;
+  background-image: url(./img/burger.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+}
+
+.about h2{
+margin-bottom:20px;
+  border: 1px solid #000;
+  border-top:2px solid red;
+  border-radius: 8px;
+  padding:5px;
+}
+
+.about p{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: popplins;
+  color:#fff;
+}
+
+.gallery{
+  background-image: url(./img/pas.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+padding:50px;
+text-align:center;
+}
+
+.food-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:30px;
+}
+
+.food{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+.food img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.food h3{
+padding:10px;
+}
+
+
+  #contact {
+    background-image: url(./img/table.jpg);
+  background-repeat: no repeat;
+  background-size: cover;
+  }
+.contact{
+background:white;
+padding:50px;
+text-align:center;
+}
+
+form{
+  
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input, textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#ff5722;
+color:white;
+border:none;
+padding:12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e64a19;
+}
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+
+  
+  
+}

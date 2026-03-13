@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Foodies Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Your Cart</h2>
+<ul id="cart-items"></ul>
+<p>Total: <span id="cart-total">&#8358;0</span></p>
+<button id="checkout-btn">Checkout</button>
+
+<script>
+// Load cart from localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartItems = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
+const checkoutBtn = document.getElementById('checkout-btn');
+
+function renderCart() {
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - ₦${item.price}`;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'X';
+    removeBtn.addEventListener('click', () => removeItem(index));
+
+    li.appendChild(removeBtn);
+    cartItems.appendChild(li);
+  });
+  cartTotal.textContent = `₦${total}`;
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+}
+
+// Checkout
+checkoutBtn.addEventListener('click', () => {
+  if(cart.length === 0){
+    alert('Your cart is empty!');
+    return;
+  }
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
+  alert(`Thank you for your purchase! Total: ₦${total}`);
+  cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+});
+
+// Initial render
+renderCart();
+</script>
+</body>
+</html>
